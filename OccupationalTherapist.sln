@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OccupationalTherapist-DataA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OccupationalTherapist-DataAccessLayer", "OccupationalTherapist-DataAccessLayer\OccupationalTherapist-DataAccessLayer.csproj", "{6C2EBD04-EA5C-4DC7-BDDF-0AA63809FFAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccupationalTherapist-BusinessLayer", "OccupationalTherapist-BusinessLayer\OccupationalTherapist-BusinessLayer.csproj", "{728ED96D-5879-456A-8DB8-0EE91A8D2AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OccupationalTherapist-BusinessLayer", "OccupationalTherapist-BusinessLayer\OccupationalTherapist-BusinessLayer.csproj", "{728ED96D-5879-456A-8DB8-0EE91A8D2AD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccupationalTherapist-Dtos", "OccupationalTherapist-Dtos\OccupationalTherapist-Dtos.csproj", "{27FA8987-16AC-4751-86DE-C496A64237E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OccupationalTherapist-Dtos", "OccupationalTherapist-Dtos\OccupationalTherapist-Dtos.csproj", "{27FA8987-16AC-4751-86DE-C496A64237E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OccupationalTherapist-Api", "OccupationalTherapist-Api\OccupationalTherapist-Api.csproj", "{13E9D3C9-8968-4CD9-A360-05C5E7D7337D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{27FA8987-16AC-4751-86DE-C496A64237E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27FA8987-16AC-4751-86DE-C496A64237E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27FA8987-16AC-4751-86DE-C496A64237E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E9D3C9-8968-4CD9-A360-05C5E7D7337D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E9D3C9-8968-4CD9-A360-05C5E7D7337D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E9D3C9-8968-4CD9-A360-05C5E7D7337D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E9D3C9-8968-4CD9-A360-05C5E7D7337D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
-﻿using OccupationalTherapist_Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using OccupationalTherapist_Core.Entities;
 using OccupationalTherapist_DataAccess.EFCore.Abstracts;
 using OccupationalTherapist_DataAccess.Interface.Repositories;
 using OccupationalTherapist_DataAccessLayer.Context;
@@ -12,8 +13,41 @@ namespace OccupationalTherapist_DataAccess.EFCore.Repositories
 {
     internal class CommentRepository : BaseRepository<Comment>, ICommentRepository
     {
+        private readonly AppDbContext _context;
         public CommentRepository(AppDbContext context) : base(context)
         {
+        }
+
+        public int GetCommentCountByPostIdAsync(int postId)
+        {
+            var comment = _context.Set<Comment>()
+                .Where(c => c.Id == postId)
+                .Select(c => c.Likes)
+                .FirstOrDefault();
+
+            return comment; 
+        }
+
+        public int GetCommentLikesCountByPostId(int postId)
+        {
+            var totalLikes = _context.Set<Comment>().Where(c => c.PostId == postId).Sum(c => c.Likes);
+
+            return totalLikes;
+        }
+
+        public IQueryable<Comment> GetCommentsWithDetails()
+        {
+            return _context.Set<Comment>()
+                .Include(c => c.User)
+                .Include(c => c.Post)
+                .ThenInclude(p => p.User)
+                .Include(c => c.Replies)
+                .ThenInclude(r => r.User);
+        }
+
+        void ICommentRepository.GetCommentCountByPostIdAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

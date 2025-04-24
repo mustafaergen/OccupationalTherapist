@@ -9,8 +9,14 @@ namespace OccupationalTherapist_Dtos.Comments
     public class CommentCreateDto
     {
         public string Content { get; set; }
+
+        public List<string>? ImageUrls { get; set; }
+        public List<string>? VideoUrls { get; set; }
+
         public int PostId { get; set; }
         public string UserId { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public int? ParentCommentId { get; set; }  
     }
+
 }

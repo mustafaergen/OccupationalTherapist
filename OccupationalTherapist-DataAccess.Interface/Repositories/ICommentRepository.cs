@@ -10,5 +10,8 @@ namespace OccupationalTherapist_DataAccess.Interface.Repositories
 {
     public interface ICommentRepository : IBaseRepository<Comment>
     {
+        IQueryable<Comment> GetCommentsWithDetails();
+        int GetCommentCountByPostIdAsync(int postId);
+        int GetCommentLikesCountByPostId(int postId);
     }
 }
