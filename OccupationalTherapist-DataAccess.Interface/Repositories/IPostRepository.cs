@@ -10,5 +10,7 @@ namespace OccupationalTherapist_DataAccess.Interface.Repositories
 {
     public interface IPostRepository : IBaseRepository<Post>
     {
+        int GetPostLikesCountByPostId(int postId);
+        int GetPostCommentsCountByPostId(int postId);
     }
 }

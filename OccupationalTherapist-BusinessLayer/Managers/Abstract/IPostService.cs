@@ -17,5 +17,7 @@ namespace OccupationalTherapist_BusinessLayer.Managers.Abstract
         Task<PostDto> GetPostByIdAsync(int postId);
         Task<List<PostDto>> GetPostsByUserIdAsync(string userId);
         Task<List<PostDto>> SearchPostsAsync(string keyword);
+        int GetPostLikesCountByPostId(int postId);
+        int GetPostCommentsCountByPostId(int postId);
     }
 }

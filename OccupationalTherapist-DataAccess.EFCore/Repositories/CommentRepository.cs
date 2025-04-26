@@ -18,19 +18,16 @@ namespace OccupationalTherapist_DataAccess.EFCore.Repositories
         {
         }
 
-        public int GetCommentCountByPostIdAsync(int postId)
+        public int GetCommentCountByPostId(int postId)
         {
-            var comment = _context.Set<Comment>()
-                .Where(c => c.Id == postId)
-                .Select(c => c.Likes)
-                .FirstOrDefault();
-
-            return comment; 
+            return _context.Set<Comment>()
+                .Count(c => c.PostId == postId);
         }
+
 
         public int GetCommentLikesCountByPostId(int postId)
         {
-            var totalLikes = _context.Set<Comment>().Where(c => c.PostId == postId).Sum(c => c.Likes);
+            var totalLikes = _context.Set<Comment>().Where(c => c.PostId == postId).Sum(c => (int?)c.Likes) ?? 0;
 
             return totalLikes;
         }
@@ -45,9 +42,5 @@ namespace OccupationalTherapist_DataAccess.EFCore.Repositories
                 .ThenInclude(r => r.User);
         }
 
-        void ICommentRepository.GetCommentCountByPostIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

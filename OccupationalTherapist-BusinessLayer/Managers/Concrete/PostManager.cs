@@ -81,6 +81,16 @@ namespace OccupationalTherapist_BusinessLayer.Managers.Concrete
             }
         }
 
+        public int GetPostCommentsCountByPostId(int postId)
+        {
+            return _repositoryManager.Post.GetPostCommentsCountByPostId(postId);
+        }
+
+        public int GetPostLikesCountByPostId(int postId)
+        {
+            return _repositoryManager.Post.GetPostLikesCountByPostId(postId);
+        }
+
         public async Task<List<PostDto>> GetPostsByUserIdAsync(string userId)
         {
             var post = _repositoryManager.Post.FindByCondition(x => x.UserId == userId);
