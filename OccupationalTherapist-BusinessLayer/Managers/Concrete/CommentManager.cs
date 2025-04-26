@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using OccupationalTherapist_BusinessLayer.Managers.Abstract;
 using OccupationalTherapist_Core.Entities;
 using OccupationalTherapist_DataAccess.Interface.UnitOfWork;
@@ -68,8 +68,8 @@ namespace OccupationalTherapist_BusinessLayer.Managers.Concrete
 
         public int GetCommentCountByPostIdAsync(int postId)
         {
-            var commentCount = _repositoryManager.Comment.GetCommentCountByPostIdAsync(postId);
-            if (commentCount == 0)
+            var commentCount = _repositoryManager.Comment.GetCommentCountByPostId(postId);
+            if (commentCount == 0) 
             {
                 throw new KeyNotFoundException($"No comments found for post with ID {postId}.");
             }
